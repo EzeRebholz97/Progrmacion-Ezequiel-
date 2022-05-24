@@ -1,0 +1,48 @@
+
+//Borrar Pantalla
+Console.Clear();
+
+//Pedir el nombre
+Console.WriteLine("Cual es tu nombre?");
+
+//Saludo 
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+string NombreIngresado =
+    Console.ReadLine();
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+Console.WriteLine($"¡Hola {NombreIngresado}!");
+
+//Desea Continuar
+Console.WriteLine($"¿Desea continuar {NombreIngresado}? S=si, N=no ");
+
+var Respuesta = "S";
+
+while (Respuesta.ToUpper() == "S")
+{
+   Console.Clear();
+   Console.WriteLine("Cual es su nombre?");
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+   string nombre = Console.ReadLine();
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
+   Console.WriteLine("¡Hola" + nombre + "!");
+
+Console.WriteLine("Desea continuar? S=si, N=no");
+Respuesta = Console.ReadLine();
+
+
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
+    if (Respuesta.ToUpper() == "N")
+    {
+        Console.WriteLine("Programa se ha finalizado correctamente");
+    }
+
+    else if (Respuesta.ToUpper() != "N")
+    {
+        Console.WriteLine("Opcion no valida");
+    }
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+
+
+
+//Salir del while
+Console.WriteLine("Programa finalizado");
